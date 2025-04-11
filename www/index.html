@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" >
-    <meta name="viewport" content="width=device-width, intial-scale=1.0" >
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, intial-scale=1.0" />
     <title>lAppI</title>
-    <link rel="shortcut icon" href="assets/logo.jpg" type="image/x-icon">
+
+    <link rel="shortcut icon" href="assets/logo.jpg" type="image/x-icon" />
 
     <!-- Bootsrap -->
     <link
@@ -12,8 +13,12 @@
       rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
-    >
-
+    />
+    <!-- Bootsrap Icons-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <!-- Particle js -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
@@ -26,33 +31,75 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <section id="Oval" class="mb-4">
-      <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-          <div
-            class="d-flex justify-content-center align-items-center"
-            style="height: 80vh"
-          >
-            <canvas
-              id="canvasOne"
-              width="300"
-              height="300"
-              style="position: absolute"
-            ></canvas>
-            <div class="LappiHood">
-              <div class="square">
-                <span class="cirle"></span>
-                <span class="cirle"></span>
-                <span class="cirle"></span>
+    <div class="container">
+      <section id="Oval" class="mb-4">
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-10">
+            <div
+              class="d-flex justify-content-center align-items-center"
+              style="height: 80vh"
+            >
+              <canvas
+                id="canvasOne"
+                width="300"
+                height="300"
+                style="position: absolute"
+              ></canvas>
+              <div class="LappiHood">
+                <div class="square">
+                  <span class="cirle"></span>
+                  <span class="cirle"></span>
+                  <span class="cirle"></span>
+                </div>
+              </div>
+            </div>
+            <h5 class="text-light text text-center">Ask Me Anything</h5>
+            <div class="col-md-12 mt-4 pt-4">
+              <div class="text-center">
+                <div id="TextInput" class="d-flex">
+                  <input
+                    type="text"
+                    class="input-field"
+                    name="chatbox"
+                    id="chatbox"
+                    placeholder="Type here..."
+                  />
+                  <button id="MicBtn" class="glow-on-hover">
+                    <i class="bi bi-mic"></i>
+                  </button>
+                  <button id="ChatBtn" class="glow-on-hover">
+                    <i class="bi bi-chat-dots"></i>
+                  </button>
+                  <button id="SettingBtn" class="glow-on-hover">
+                    <i class="bi bi-gear"></i>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-          <h5 class="text-light text text-center">Ask Me Anything</h5>
+          <div class="col-md-1"></div>
         </div>
-        <div class="col-md-1"></div>
-      </div>
-    </section>
+      </section>
+      <section id="SiriWave" class="mb-4" hidden>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div
+                class="d-flex justify-content-center align-items-center"
+                style="height: 100vh"
+              >
+              <div>
+                <p class="text-start text-light mb-4 siri-message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessi</p>
+
+                <div id="siri-container"></div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
     <!--Jquery  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
@@ -64,8 +111,11 @@
     ></script>
 
     <!-- Particle js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
     <script src="script.js"></script>
-
+    <!-- siri wave -->
+    <script src="https://unpkg.com/siriwave/dist/siriwave.umd.min.js"></script>
     <!-- Texllate js -->
     <script src="assets/vendore/texllate/jquery.fittext.js"></script>
     <script src="assets/vendore/texllate/jquery.lettering.js"></script>

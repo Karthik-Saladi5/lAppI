@@ -9,4 +9,29 @@ $(document).ready(function () {
       effect: "bounceOut",
     },
   });
+
+  //siri
+  var siriWave = new SiriWave({
+    container: document.getElementById("siri-container"),
+    width: 800,
+    height: 200,
+    style: "ios",
+    color: "#00ff00",
+    amplitude: "1",
+    speed: ".30",
+    autostart: true,
+  });
+  // siri message animation
+  $(".siri-message").textillate({
+    loop: true,
+    sync: true,
+    in: {
+      effect: "fadeInUp",
+      sync: true,
+    },
+    out: {
+      effect: "fadeOutUp",
+      sync: true,
+    },
+  });
 });
