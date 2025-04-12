@@ -1,13 +1,17 @@
 import os
 import eel
+import atexit
+def del_cache():
+    cache="engine/__pycache__"
+    if os.path.exists(cache) and os.path.isdir(cache):
+        import shutil
+        shutil.rmtree(cache)
+
+atexit.register(del_cache)
 
 from engine.features import *
 from engine.command import *
 
-cache="engine/__pycache__"
-if os.path.exists(cache) and os.path.isdir(cache):
-    import shutil
-    shutil.rmtree(cache)
 
 eel.init("www")
 
