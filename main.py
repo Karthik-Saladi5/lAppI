@@ -4,6 +4,11 @@ import eel
 from engine.features import *
 from engine.command import *
 
+cache="engine/__pycache__"
+if os.path.exists(cache) and os.path.isdir(cache):
+    import shutil
+    shutil.rmtree(cache)
+
 eel.init("www")
 
 playAssistantSound()
