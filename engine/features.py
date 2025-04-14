@@ -12,6 +12,8 @@ import os
 import pywhatkit as kit
 import sqlite3
 
+from datetime import datetime
+
 from engine.helper import extract_yt_term
 
 conn= sqlite3.connect("lappy.db")
@@ -21,6 +23,17 @@ cursor=conn.cursor()
 def playAssistantSound():
     music_dir="www/assets/audio/start_sound.mp3"
     playsound(music_dir)
+
+def greet():
+    current_hour=datetime.now().hour
+    if 5<=current_hour<12:
+        speak("Good Morning SK")
+    elif 12<=current_hour<17:
+        speak("Good Afternoon SK")
+    elif 17<=current_hour<20:
+        speak("Good Evening SK")
+    else:
+        speak("Welcome back Mr.Egoist")
 
 def openCommand(query):
     query = query.replace(ASSISTANT_NAME,"")
